@@ -13,9 +13,8 @@
 
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
     padding: 0;
-    margin: 0;
+    font-family: 'Roboto', sans-serif;      
     display: flex;
     min-height: 100vh;
     justify-content: center;
@@ -24,31 +23,12 @@ body {
 
 .main {
     width: 100vw;
-
     display: grid;
-    /* gap: 10px; */
     grid-template-areas: 'navbar navbar navbar navbar navbar'
-        'aside section section section section'
-        'footer footer footer footer footer';
+                         'aside section section section section'
+                         'footer footer footer footer footer';
     grid-template-rows: 100px auto 100px;
 }
-
-
-
-.section {
-
-    display: grid;
-    gap: 10px;
-    row-gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-}
-
-
-
-
-
-
 
 .product {
     background-color: var(--white);
@@ -65,7 +45,6 @@ body {
     box-shadow: 0px 8px 8px black;
     box-shadow: 0px 0px 8px 1px var(--outerSpace);
     cursor: pointer;
-
 }
 
 .img-product {
@@ -126,10 +105,8 @@ button:hover {
 
 .div-logo {
     background-image: url(../img/logo.png);
-
     width: 200px;
     background-repeat: no-repeat;
-
     background-size: contain;
 }
 
@@ -157,7 +134,10 @@ button:hover {
 .grid-item:nth-child(3) {
     grid-area: section;
     background-color: var(--platinum);
-
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%,19rem),1fr));
+    gap: 1rem;
+    justify-items: center;   
 
 }
 
@@ -169,22 +149,10 @@ button:hover {
 .grid-item {
 
     color: var(--darkJungle);
-    /* border: 1px solid var(--outerSpace); */
-    /* border-radius: 5px; */
     padding: 1rem;
 }
 
-@media screen and (min-width: 850px) and (max-width: 1180px) {
-
-    .section {
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-}
-
-
-
-@media screen and (min-width: 661px) and (max-width: 850px) {
+@media screen and (min-width: 661px) and (max-width: 903px) {
     .main {
 
         grid-template-areas: 'navbar navbar navbar navbar navbar'
@@ -192,11 +160,6 @@ button:hover {
             'section section section section section'
             'footer footer footer footer footer';
         grid-template-rows: 100px 100px auto 100px;
-    }
-
-    .section {
-        grid-template-columns: repeat(2, 1fr);
-
     }
 
     .div-categorias{
@@ -207,19 +170,13 @@ button:hover {
 @media screen and (min-width: 0px) and (max-width: 660px) {
 
     .main {
-
         grid-template-areas: 'navbar navbar navbar navbar navbar'
             'aside aside aside aside aside'
             'section section section section section'
             'footer footer footer footer footer';
         grid-template-rows: 100px 100px auto 100px;
     }
-
-
-    .section {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    
+   
     .div-categorias{
         display: none;
     }
